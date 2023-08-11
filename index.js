@@ -83,7 +83,6 @@ app.post('/api/persons', (request, response, next) => {
     person.save()
         .then(savedPerson => savedPerson.toJSON())
         .then(savedAndFormattedPerson => {
-            console.log(`added ${person.name} number ${person.number} to phonebook`)
             response.json(savedAndFormattedPerson)
         })
         .catch(error => next(error))
